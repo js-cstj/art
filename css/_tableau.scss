@@ -1,0 +1,20 @@
+.liste-tableaux {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 240px);
+    gap: 1em;
+    padding: 1em;
+    > div {
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        a {
+            font-style: italic;
+            &:hover {
+                font-style: normal;
+            }
+        }
+    }
+}
