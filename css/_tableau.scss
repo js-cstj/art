@@ -1,20 +1,38 @@
 .liste-tableaux {
-    border: 1px solid black;
     display: grid;
-    grid-template-columns: repeat(3, 240px);
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 1em;
-    padding: 1em;
-    > div {
-        border: 1px solid black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        a {
-            font-style: italic;
-            &:hover {
-                font-style: normal;
-            }
+    
+}
+.carte {
+    background-color: hsl(var(--h), var(--s), 80%);
+    box-shadow: 1px 1px 3px #0008;
+    border-radius: .5em;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    overflow: hidden;
+    max-height: 20em;
+    padding-top: .5em;
+    > * {
+        margin: 0 1rem;
+    }
+    h2 {
+        line-height: 1;
+        
+    }
+    figure {
+        overflow: hidden;
+        margin: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
+    }
+    .artistes {
+        list-style-type: none;
+        margin-bottom: .5em;
+        font-style: italic;
     }
 }

@@ -1,9 +1,9 @@
-@import 'polices/professional-business.css';
+@import 'polices/elegant-sophisticated.css';
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap");
 :root {
-  --h: 240;
-  --s: 0%;
+  --h: 60;
+  --s: 15%;
   --l: 50%;
   --font-family: "Roboto", sans-serif;
   --font-titre: "Roboto Slab", serif;
@@ -51,6 +51,10 @@ a {
   color: inherit;
 }
 
+img {
+  display: block;
+}
+
 #interface, .interface {
   min-height: 100%;
   display: grid;
@@ -94,25 +98,45 @@ nav ul li a:hover {
 
 #app {
   padding: 1em;
+  background-color: hsl(var(--h), var(--s), 10%);
 }
 
 .liste-tableaux {
-  border: 1px solid black;
   display: grid;
-  grid-template-columns: repeat(3, 240px);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1em;
-  padding: 1em;
 }
-.liste-tableaux > div {
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+
+.carte {
+  background-color: hsl(var(--h), var(--s), 80%);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5333333333);
+  border-radius: 0.5em;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  overflow: hidden;
+  max-height: 20em;
+  padding-top: 0.5em;
 }
-.liste-tableaux > div a {
+.carte > * {
+  margin: 0 1rem;
+}
+.carte h2 {
+  line-height: 1;
+}
+.carte figure {
+  overflow: hidden;
+  margin: 0;
+}
+.carte figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.carte .artistes {
+  list-style-type: none;
+  margin-bottom: 0.5em;
   font-style: italic;
-}
-.liste-tableaux > div a:hover {
-  font-style: normal;
 }/*# sourceMappingURL=style.css.map */
